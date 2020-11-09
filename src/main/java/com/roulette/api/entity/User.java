@@ -21,7 +21,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -64,7 +63,7 @@ public class User implements Serializable {
 	private Roulette roulette;
 
 	@JsonManagedReference
-	@OneToMany(mappedBy = "users")
+	@OneToMany(mappedBy = "user")
 	private List<Bet> bets;
 
 	public User() {
