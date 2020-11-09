@@ -40,11 +40,11 @@ public class Roulette implements Serializable {
 	@CreationTimestamp
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private Date createdRoulette;
-	
+
 	@UpdateTimestamp
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private Date updatedRoulette;
-	
+
 	@JsonBackReference
 	@OneToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "user_id", nullable = false)
@@ -53,7 +53,7 @@ public class Roulette implements Serializable {
 	public Roulette() {
 		super();
 	}
-	
+
 	public Roulette(Long id, int number, boolean color, Date createdRoulette, Date updatedRoulette, User user) {
 		super();
 		this.id = id;
