@@ -19,6 +19,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "bets")
 public class Bet implements Serializable {
@@ -45,6 +47,7 @@ public class Bet implements Serializable {
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private Date updatedBet;
 
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
