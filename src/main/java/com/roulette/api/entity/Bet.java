@@ -34,7 +34,6 @@ public class Bet implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank(message = "Value field cannot be blank")
 	@Min(value = 1, message = "Value min. $1")
 	@Max(value = 36000, message = "Value max. $36.000")
 	private double value;
@@ -58,7 +57,7 @@ public class Bet implements Serializable {
 
 	
 	public Bet(Long id,
-			@NotBlank(message = "Value field cannot be blank") @Min(value = 1, message = "Value min. $1") @Max(value = 36000, message = "Value max. $36.000") double value,
+			@Min(value = 1, message = "Value min. $1") @Max(value = 36000, message = "Value max. $36.000") double value,
 			Date createdBet, Date updatedBet, User user) {
 		super();
 		this.id = id;

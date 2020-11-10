@@ -45,7 +45,7 @@ public class User implements Serializable {
 	@NotBlank(message = "Email is mandatory")
 	@Email(message = "Must be a properly formatted email address")
 	private String email;
-	
+
 	@Transient
 	@NotBlank(message = "Surname is mandatory")
 	private String cash;
@@ -70,8 +70,6 @@ public class User implements Serializable {
 		super();
 	}
 
-	
-
 	public User(Long id, @NotBlank(message = "Name is mandatory") String names,
 			@NotBlank(message = "Surname is mandatory") String surnames,
 			@NotBlank(message = "Email is mandatory") @Email(message = "Must be a properly formatted email address") String email,
@@ -88,8 +86,6 @@ public class User implements Serializable {
 		this.roulette = roulette;
 		this.bets = bets;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -154,20 +150,14 @@ public class User implements Serializable {
 	public void setBets(List<Bet> bets) {
 		this.bets = bets;
 	}
-	
-	
 
 	public String getCash() {
 		return cash;
 	}
 
-
-
 	public void setCash(String cash) {
 		this.cash = cash;
 	}
-
-
 
 	@Override
 	public String toString() {
